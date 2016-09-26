@@ -1,0 +1,13 @@
+<h2>Show question</h2>
+
+<ul>
+
+  <li>
+    <strong>Question map:</strong>
+    <%= @question.question_map %>
+  </li>
+
+</ul>
+
+<%= link "Edit", to: question_path(@conn, :edit, @question) %>
+<%= link "Back", to: question_path(@conn, :index) %>
