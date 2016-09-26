@@ -1,0 +1,99 @@
+<h3>
+  Cuestionario <br />
+  <small>Responde las siguientes preguntas acerca de subneting</small> <br />
+  <small>Anota tu número de boleta, nombre y apellidos</small>
+</h3>
+<%= form_for @conn, student_question_path(@conn, :create),  [method: :post, name: :form], fn f -> %>
+  <fieldset style="border: 1px solid rgba(64, 64, 64, 0.3);
+    padding: 10px;
+    border-radius: 6px;">
+    <div class="row">
+      <div class="form-group col-md-3">
+        <%= label f, :student_id, "Boleta: " %>
+        <%= number_input f, :student_id, class: "form-control" %>
+      </div>
+      <div class="form-group col-md-4">
+        <%= label f, :name, "Nombre: " %>
+        <%= text_input f, :name, class: "form-control" %>
+      </div>
+      <div class="form-group col-md-5">
+        <%= label f, :last_name, "Apellidos: " %>
+        <%= text_input f, :last_name, class: "form-control" %>
+      </div>
+    </div>
+  </fieldset>
+
+  <fieldset style="margin: 20px 0; border: 1px solid rgba(64, 64, 64, 0.3);
+    padding: 10px;
+    border-radius: 6px;">
+    <h3>
+      <small>Para la red 192.168.10.0 con mascara 255.255.255.0 responde las siguientes preguntas</small>
+    </h3>
+    <p>1. Número maximo de sub redes que se pueden obtener</p>
+    <div class="form-group col-md-12">
+      <label class="radio-inline">
+        <input type="radio" name="q1" id="inlineRadio1" value="1"> 2^3
+      </label>
+      <label class="radio-inline">
+        <input type="radio" name="q1" id="inlineRadio2" value="2"> 2^8
+      </label>
+      <label class="radio-inline">
+        <input type="radio" name="q1" id="inlineRadio3" value="3"> 2^1
+      </label>
+    </div>
+    <p>2. Número de bits minino para crear 11 subredes</p>
+    <div class="form-group col-md-12">
+      <label class="radio-inline">
+        <input type="radio" name="q2" id="inlineRadio1" value="1"> 4
+      </label>
+      <label class="radio-inline">
+        <input type="radio" name="q2" id="inlineRadio2" value="2"> 3
+      </label>
+      <label class="radio-inline">
+        <input type="radio" name="q2" id="inlineRadio3" value="3"> 2
+      </label>
+    </div>
+    <p>3. Elije la máscara ampliada considerando que necesitamos 8 subredes</p>
+    <div class="form-group col-md-12">
+      <label class="radio-inline">
+        <input type="radio" name="q3" id="inlineRadio1" value="1"> 255.255.255.230
+      </label>
+      <label class="radio-inline">
+        <input type="radio" name="q3" id="inlineRadio2" value="2"> 255.255.255.250
+      </label>
+      <label class="radio-inline">
+        <input type="radio" name="q3" id="inlineRadio3" value="3"> 255.255.255.224
+      </label>
+    </div>
+
+    <p>4. Cuantos equipos (host) habra por subred considerando que necesitamos 8 subredes</p>
+    <div class="form-group col-md-12">
+      <label class="radio-inline">
+        <input type="radio" name="q4" id="inlineRadio1" value="1"> 2^5-2
+      </label>
+      <label class="radio-inline">
+        <input type="radio" name="q4" id="inlineRadio2" value="2"> 2^4-2
+      </label>
+      <label class="radio-inline">
+        <input type="radio" name="q4" id="inlineRadio3" value="3"> 2^3-2
+      </label>
+    </div>
+
+    <p>5. Dirección IP de la subred #5 de considerando que necesitamos 8 subredes</p>
+    <div class="form-group col-md-12">
+      <label class="radio-inline">
+        <input type="radio" name="q5" id="inlineRadio1" value="1"> 192.168.10.192
+      </label>
+      <label class="radio-inline">
+        <input type="radio" name="q5" id="inlineRadio2" value="2"> 192.168.10.160
+      </label>
+      <label class="radio-inline">
+        <input type="radio" name="q5" id="inlineRadio3" value="3"> 192.168.10.96
+      </label>
+    </div>
+
+  </fieldset>
+  <%= submit "Enviar", class: "btn btn-default" %>
+<% end %>
+
+
