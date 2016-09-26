@@ -23,6 +23,8 @@ defmodule Questionnaire.Router do
     get "/students/:id/edit", StudentController, :edit
     put "/students/:id/edit", StudentController, :update
     delete "/students/:id", StudentController, :delete
+
+    resources "/questions", QuestionController
   end
 
   # Other scopes may use custom stacks.
