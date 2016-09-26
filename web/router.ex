@@ -16,7 +16,13 @@ defmodule Questionnaire.Router do
   scope "/", Questionnaire do
     pipe_through :browser # Use the default browser stack
 
-    get "/", PageController, :index
+    get "/", StudentController, :new
+    post "/", StudentController, :create
+    get "/students", StudentController, :index
+    get "/studets/:id", StudentController, :show
+    get "/students/:id/edit", StudentController, :edit
+    put "/students/:id/edit", StudentController, :update
+    delete "/students/:id", StudentController, :delete
   end
 
   # Other scopes may use custom stacks.
