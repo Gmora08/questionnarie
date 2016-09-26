@@ -1,7 +1,7 @@
 defmodule Questionnaire.StudentQuestion do
 	use Questionnaire.Web, :model
 
-	schema "studens_questions" do
+	schema "students_questions" do
 		field :student_response, :string
 		belongs_to :students, Questionnaire.Student
 		belongs_to :questions, Questionnaire.Question

@@ -9,3 +9,11 @@
 #
 # We recommend using the bang functions (`insert!`, `update!`
 # and so on) as they will fail if something goes wrong.
+alias Questionnaire.Question
+alias Questionnaire.Repo
+
+Question.changeset(%Question{}, %{question_map: %{id: 1, r: 2} }) |> Repo.insert!
+Question.changeset(%Question{}, %{question_map: %{id: 2, r: 1} }) |> Repo.insert!
+Question.changeset(%Question{}, %{question_map: %{id: 3, r: 3} }) |> Repo.insert!
+Question.changeset(%Question{}, %{question_map: %{id: 4, r: 1} }) |> Repo.insert!
+Question.changeset(%Question{}, %{question_map: %{id: 5, r: 2} }) |> Repo.insert!

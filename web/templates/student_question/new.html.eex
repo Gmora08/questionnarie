@@ -3,7 +3,7 @@
   <small>Responde las siguientes preguntas acerca de subneting</small> <br />
   <small>Anota tu número de boleta, nombre y apellidos</small>
 </h3>
-<%= form_for @conn, student_question_path(@conn, :create),  [method: :post, name: :form], fn f -> %>
+<%= form_for @conn, student_question_path(@conn, :create),  [method: :post, as: :form], fn f -> %>
   <fieldset style="border: 1px solid rgba(64, 64, 64, 0.3);
     padding: 10px;
     border-radius: 6px;">
