@@ -36,8 +36,8 @@ config :phoenix, :stacktrace_depth, 20
 # Configure your database
 config :questionnaire, Questionnaire.Repo,
   adapter: Ecto.Adapters.Postgres,
-  username: "postgres",
-  password: "postgres",
-  database: "questionnaire_dev",
+  username: "redes",
+  password: "equipo5",
+  database: "tests_redes",
   hostname: "localhost",
   pool_size: 10
