@@ -5,6 +5,7 @@ defmodule Questionnaire.Student do
     field :name, :string
     field :last_name, :string
     field :student_id, :integer
+    many_to_many :questions, Questionnaire.Question, join_through: Questionnaire.StudentQuestion
 
     timestamps()
   end

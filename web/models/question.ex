@@ -3,6 +3,7 @@ defmodule Questionnaire.Question do
 
   schema "questions" do
     field :question_map, :map
+    many_to_many :students, Questionnaire.Student, join_through: Questionnaire.StudentQuestion
 
     timestamps()
   end

@@ -25,6 +25,9 @@ defmodule Questionnaire.Router do
     delete "/students/:id", StudentController, :delete
 
     resources "/questions", QuestionController
+
+    get "/test", StudentQuestionController, :new
+    post "/test", StudentQuestionController, :create
   end
 
   # Other scopes may use custom stacks.
